@@ -1,32 +1,7 @@
-# resource "local_file" "Apache" {
-#   count    = 3
-#   content  = "Apache HTTPD is a webserver and used as a proxy LB to App Servers"
-#   filename = "/root/tresources/server-${count.index}.txt"
-# }
-
-# resource "random_id" "id" {
-#   byte_length = 8
-#   #id         = random_id.id
-# }
-
-# resource "random_password" "password" {
-#   length           = 16
-#   special          = true
-#   override_special = "!#$%&*()-_=+[]{}<>:?"
-# }
-
-# resource "random_pet" "mypet" {
-#   prefix    = "Mrs"
-#   separator = "."
-#   length    = 1
-# }
-
-## with variables references in main.terraform 
-
 resource "local_file" "apache" {
   content         = var.content
   filename        = var.filename
-  file_permission = "777"
+  file_permission = "750"
 }
 
 resource "random_id" "id" {
